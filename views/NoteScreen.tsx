@@ -1,6 +1,6 @@
 import {useState} from 'react';
-import {TextInput, View, Flatlist} from 'react-native';
-import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
+import {TextInput, FlatList, Text, Button} from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import { Note } from '../types/Note';
 
 
@@ -14,23 +14,15 @@ export default function Notes () {
     setNoteslist([Note]);
   }
 
-const Notes = () => {
-  return (
-    <SafeAreaProvider>
+  return ( 
       <SafeAreaView style={styles.container}>
-        <FlatList
         <TextInput 
           style={{fontSize: 18, width: 200}} 
-          placeholder='Enter a keyword' 
-          value={keyword}
-          onChangeText={text => setKeyword(text)} 
+          placeholder='Add new note' 
         />
         <Button title="Save" onPress={handleSave} />
-        
+        <FlatList>
+        </FlatList>
       </SafeAreaView>
-    </SafeAreaProvider>
   );
-};
-
-
 }

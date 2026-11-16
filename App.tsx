@@ -5,6 +5,7 @@ import NoteScreen from './views/NoteScreen';
 import MapScreen from './views/MapScreen';
 import ReminderScreen from './views/ReminderScreen';
 import Ionicons from '@expo/vector-icons/Ionicons';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
 
 
 export default function App() {
@@ -15,6 +16,7 @@ export default function App() {
   return (
     <View style={styles.container}>
       <NavigationContainer>
+         <SafeAreaProvider>
         <Tab.Navigator>
           <Tab.Screen name="Notes"
             component={NoteScreen} 
@@ -39,6 +41,7 @@ export default function App() {
             />
         </Tab.Navigator>
       </NavigationContainer>
+      </SafeAreaProvider>
     </View>
   );
 }
