@@ -19,6 +19,8 @@ export default function Notes () {
         <TextInput 
           style={{fontSize: 18, width: 200}} 
           placeholder='Add new note' 
+          value = {note}
+          onChangeText={text => setNote(text)}
         />
         <Button title="Save" onPress={handleSave} />
         <FlatList>
